@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width, intial scale=1.0">
+        <title>
+            University Website
+        </title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant:wght@100;300;400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+        <style>
+            *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Ysabeau Infant', sans-serif;
+}    
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url('1.jpeg')   ;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 300px;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size 15px;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;  
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+.text-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.text-box h1{
+        font-size: 65px;
+}
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 15 px;;
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 15px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover{
+    border: 1px solid royalblue  ;
+    background: royalblue;
+    transition: 0.5s;
+}
+nav .fa{
+    display: none;
+}
+@media(max-width: 700px){
+    .text-box h1{
+        font-size: 20px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        background: royalblue;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2; 
+        transition: 1s;
+    }
+    nav. fa{
+        display: block;
+        color:#fff;
+        margin: right;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
+}
+.Courses{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+p{
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px ;
+}
+.Row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5%;
+}
+.Course-Col{
+    flex-basis: 31%;
+    background: lightcoral;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+} 
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.Course-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+@media(max-width: 700px){
+    .row{
+        flex-direction: column;
+
+    }
+}
+.Campus{
+    width: 80%;
+    margin:auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.Campus-Col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.Campus-Col img{
+    width: 100%;
+    display: block;
+}
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+.layer:hover{
+    background: rgba(0, 42, 255, 0.7);
+}
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;   
+}
+.layer:hover h3{
+    bottom: 49%;
+    opacity: 1;
+}
+.Facilities{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+.Facilities-Col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+.Facilities-Col img{
+    width: 100%;
+    border-radius: 10 px;
+}
+.Facilities-Col p{
+    padding: 0;
+}
+.Facilities-Col h3{
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.Testimonials{
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    text-align: center;
+}
+.Testimonials-Col{
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: #fff3f3;
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+}
+.Testimonials-Col img{
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+.Testimonials-Col p{
+    padding: 0;
+}
+.Testimonials-Col h3{
+    margin-top: 15px;
+    text-align: left;
+}
+.Testimonials-Col .fa{
+    color:#f44336;
+}
+@media(max-width: 700px){
+    .Testimonials-Col img{
+        margin-left: 0px;
+        margin-right: 15px;
+    }
+}
+.cta{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("banner.jpg");
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+.cta h1{
+    color: #fff;
+    margin-bottom: 40px;
+    padding: 0;
+}
+@media(max-width: 700px){
+    .cta h1{
+        font-size: 24px;
+    }
+}
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.icons .fa{
+    color: #f44336;
+    margin:0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+.text-box p{
+    color: #fff;
+}
+        </style>
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+                <a href="PBLFINAL.html"><img src="C:\Users\adity\OneDrive\Desktop\Ghost\ANURAG\Web Technologies\HTML\logo.png"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i> 
+                    <ul>
+                        <li><a href="https://anurag.edu.in/"> Home </a></li>
+                        <li><a href="https://anurag.edu.in/discover/about-us/"> About </a></li>
+                        <li><a href="https://anurag.edu.in/academics/programs/"> Courses </a></li>
+                        <li><a href="https://anurag.edu.in/blog/"> Blog </a></li>
+                        <li><a href="tel:+91 8181057057"> Contact </a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+            <div class="text-box">
+                <h1>Welcome to Anurag University</h1>
+                <p>Join us and embark upon a journey of education and knowledge</p>
+                <a href="https://anurag.edu.in/" class="hero-btn">Visit us to know more</a>
+            </div>
+        </section>
+        <section class="Courses">
+            <h1>Programs We Offer</h1>
+            <div class="Row">
+                <div class="Course-Col">
+                    <h3>
+                        Engineering
+                    </h3>
+                    <p>
+                        Anurag University has organized to have several schools of study. The School of Engineering offers various Undergraduate, Postgraduate and Ph. D programs. The School has been ranked by NIRF and other ranking agencies. The best-in class infrastructure and Subject Matter Experts of the school will drive for the success of students.
+                    </p>
+                </div>
+                <div class="Course-Col">
+                    <h3>
+                        Pharmacy
+                    </h3>
+                    <p>
+                        The School of Pharmacy was established in 2005 and is approved by Pharmacy Council of India (PCI) and accredited by NBA. The School of Pharmacy is one of the best institutions for Pharma education in South India.
+                    </p>
+                </div>
+                <div class="Course-Col">
+                    <h3>
+                        Management
+                    </h3>
+                    <p>
+                        The School of Management was established in the year 2006. The school offers various Programs in diversified specializations. The prime focus of the School is to promote students to ascend different segments of managerial hierarchy. 
+                    </p> 
+                </div>
+                
+           </div>
+        </section>
+        <section class="Campus">
+            <h1> Our Global Campus </h1>
+            <p>
+                Welcome to Anurag University. We are Telangana’s top Private Institution offering multi-disciplinary courses in Engineering, Agricultural Sciences, Pharmacy, Management and Liberal Arts.
+            </p>
+            <div class="Row">
+                <div class="Campus-Col">
+                    <img src="2.avif" height="400px"> 
+                    <div class="layer">
+                        <h3>
+                            Campus
+                        </h3>
+                    </div>
+                </div>
+                <div class="Campus-Col">
+                    <img src="4.webp" height="400px"> 
+                    <div class="layer">
+                        <h3>
+                            A Block
+                        </h3>
+                    </div>
+                </div>
+                <div class="Campus-Col">
+                    <img src="3.jpg" height="400px"> 
+                    <div class="layer">
+                        <h3>
+                            B Block
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="Facilities">
+            <h1> Our Facilities </h1>
+            <p>
+                Anurag University provides a wide range of facilities to the students such as Libraries, Sports space, Equipment for laboratories, Parking Space and many more.
+            </p>
+            <div class="row">
+                <div class="Facilities-Col">
+                    <img src="Library.png">
+                    <h3>World Class Library</h3>
+                    <p align="center">
+                        The Digital Library, which is a part of Central Library. It has 45 computers with 20 mbps internet facility for accessing NPTEL lectures, SWAYAM and other learning resources. Digital Library provides access to various learning resources like E- Journals of IEEE, ACM Digital Library, ASME, ASCE, and DELNET.
+                    </p>
+                </div>
+                <div class="Facilities-Col">
+                    <img src="Sports.jpg">
+                    <h3>Sports Facilities</h3>
+                    <p align="center">
+                        Sports and games play a vital role in all-round development of students. Anurag is equipped with vast play fields of International standard for all outdoor sports and Indoor stadium with wooden flooring to facilitate all Indoor games. A dedicated team of 5 Physical directors work tirelessly to train our players to perfection.
+                    </p>
+                </div>
+                <div class="Facilities-Col">
+                    <img src="canteen.webp">
+                    <h3>Canteen</h3>
+                    <p align="center">
+                        The canteen is primarily responsible for serving nutritious and hygienic food to the students and staff. It also serves meals to the students residing in the campus. The Canteen serves the students in three different places.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="Testimonials"></section>
+            <h1 align="center">What our Students Say</h1>
+            <p align="center"> Listen to What our Alumni have to say</p>
+            <div class="Row">
+                <div class="Testimonial-Col">
+                    <img src="user1.jpg" align="center" height="300px">
+                    <div>
+                        <p>
+                            Here we are exposed to various trainings right from the 2nd year. These trainings helped us to improve both technical and non-technical skills. We were also given company-specific training before the company drives that improved our confidence levels about the drive. I would always be grateful to my Placement & Training division, Department for putting me in PWC.
+                            Company: PWC     Salary: 6 LPA
+                        </p>
+                        <h3>K Chinmayee Sri Lakshmi</h3>
+                            <h5 align="center">18H61A1289</h5>
+                            <h5 align="center">IT Department</h5>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                    </div>
+                </div>
+                <div class="Testimonial-Col">
+                    <img src="user2.jpg" align="center" height="300px">
+                    <div>
+                        <p>
+                            I, Snehith Raju, I got placed at “JSW” a multinational conglomerate with 8 Lakh package. My sincere appreciation & gratitude to the Training & Placement at Anurag for their efforts in imparting quality technical and aptitude training. I really had a fantastic time and learnt so much along the way.
+                            Company: JSW     Salary: 8 LPA
+                        </p>
+                        <h3>Snehith Raju</h3>
+                            <h5 align="center">18H61A0382</h5>
+                            <h5 align="center">MECH Department</h5>
+                            <i class="fa fa-star-half-o"></i>
+                    </div>
+                </div>
+                <div class="Testimonial-Col">
+                    <img src="user3.jpg" align="center" height="300px">
+                    <div>
+                        <p>
+                            I am grateful to both the faculty and the Training & Placement Department for providing a platform for me to improve my skills and an opportunity to demonstrate. I am grateful that I was placed in four companies. This would not have been possible without the assistance and direction of placement department.
+                            Company: Capgemini     Salary: 7.5 LPA
+                        </p>
+                        <h3>Kuppireddy Hasini</h3>
+                            <h5 align="center">18H61A0484</h5>
+                            <h5 align="center">ECE Department</h5>
+                            <i class="fa fa-star-half-o"></i>
+                        </div>
+                </div>
+                <div class="Testimonial-Col">
+                    <img src="user4.jpg" align="center" height="300px">
+                    <div>
+                        <p>
+                            I am Srilekha currently pursuing my 4th year in the department of Information technology. The faculty have always had their trust on us and encouraged us to push our limits. My journey from the first year to landing up at Amazon in my fourth year has been a rollercoaster ride. I would always be very grateful to the college and my department for giving me so much hope and happiness.
+                            Company: Amazon     Salary: 38 LPA
+                        </p>
+                        <h3>I Srilekha</h3>
+                            <h5 align="center">18H61A1282</h5>
+                            <h5 align="center">IT Department</h5>
+                            <i class="fa fa-star-half-o"></i>
+                        </div>
+                </div>
+            </div>
+        </section>
+        <section class="cta">
+            <h1>
+                Enroll For Our Various Online Courses<br>Anywhere From The World
+            </h1>
+            <a href="tel:+919515017103" class="hero-btn">CONTACT US</a>
+        </section>
+        <section class="footer">
+            <h4> About Us </h4>
+            <p>
+                Anurag University is established as a Private State University through Ordinance No. 1/2020, dated: 20.05.2020 as per the Telangana State Private Universities Act No. 11 of 2018.
+                <p>Our primary focus is to provide a high quality education in Undergraduate, Postgraduate and Doctoral programs of various disciplines.</p>
+            </p>
+            <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+        </section>
+        <script>
+            var navLinks=document.getElementById("navLinks");
+            function showMenu()
+            {
+                navLinks.style.right = "0";
+            }
+            function hideMenu()
+            {
+                navLinks.style.right = "-200px";
+            }
+        </script>
+    </body>
+</html>
